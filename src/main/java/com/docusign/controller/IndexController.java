@@ -1,41 +1,41 @@
 package com.docusign.controller;
 
-import com.docusign.model.Session;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class IndexController {
 
-    @Autowired
-    Session session;
+    private static final String ATTR_ENVELOPE_ID = "qpEnvelopeId";
+    private static final String ATTR_STATE = "state";
+    private static final String ATTR_EVENT = "event";
+    private static final String ATTR_TITLE = "title";
 
-    @RequestMapping(path = "/",method = RequestMethod.GET)
+
+    @GetMapping(path = "/")
     public String index(ModelMap model) {
-
-        model.addAttribute("title","Home");
+        model.addAttribute(ATTR_TITLE,"Home");
         return "pages/index";
     }
 
-    @RequestMapping(path = "/ds/mustAuthenticate",method = RequestMethod.GET)
+    @GetMapping(path = "/ds/mustAuthenticate")
     public String mustAuthenticateController(ModelMap model) {
-        model.addAttribute("title", "Authenticate with DocuSign");
+        model.addAttribute(ATTR_TITLE, "Authenticate with DocuSign");
         return "pages/ds_must_authenticate";
     }
 
-    @RequestMapping(path = "/ds-return",method = RequestMethod.GET)
-    public String returnController(@RequestParam(value="state", required = false) String state,
-                                   @RequestParam(value="event", required = false) String event,
+    @GetMapping(path = "/ds-return")
+    public String returnController(@RequestParam(value=ATTR_STATE, required = false) String state,
+                                   @RequestParam(value=ATTR_EVENT, required = false) String event,
                                    @RequestParam(value="envelopeId", required = false) String envelopeId,
                                    ModelMap model) {
-        model.addAttribute("title" , "Return from DocuSign");
-        model.addAttribute("event", event);
-        model.addAttribute("state", state);
-        model.addAttribute("qpEnvelopeId", envelopeId);
+        model.addAttribute(ATTR_TITLE , "Return from DocuSign");
+        model.addAttribute(ATTR_EVENT, event);
+        model.addAttribute(ATTR_STATE, state);
+        model.addAttribute(ATTR_ENVELOPE_ID, envelopeId);
         return "pages/ds_return";
     }
 }

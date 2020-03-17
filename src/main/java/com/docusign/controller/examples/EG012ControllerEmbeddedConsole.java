@@ -1,90 +1,72 @@
 package com.docusign.controller.examples;
 
+import com.docusign.DSConfiguration;
 import com.docusign.esign.api.EnvelopesApi;
-import com.docusign.esign.client.ApiClient;
 import com.docusign.esign.client.ApiException;
 import com.docusign.esign.model.ConsoleViewRequest;
-import com.docusign.esign.model.EnvelopeDocumentsResult;
 import com.docusign.esign.model.ViewUrl;
+import com.docusign.model.Session;
+import com.docusign.model.User;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import javax.servlet.http.HttpSession;
+import org.springframework.web.servlet.view.RedirectView;
 
+
+/**
+ * Embedded the DocuSign Web UI.<br />
+ * Redirect the user to the DocuSign Web UI. The starting view can be either
+ * an envelope's documents or the front page of the Web UI. The user does not
+ * necessarily return from the DocuSign Web UI, so using this API call is often a final
+ * step for the application. You can also open the WebUI in a new tab for the user
+ */
 @Controller
 @RequestMapping("/eg012")
-public class EG012ControllerEmbeddedConsole extends EGController {
+public class EG012ControllerEmbeddedConsole extends AbstractController {
+
+    private final Session session;
+    private final User user;
+
 
     @Autowired
-    private HttpSession session;
-
-    @Override
-    protected void addSpecialAttributes(ModelMap model) {
-        model.addAttribute("envelopeOk", session.getAttribute("envelopeId") != null);
+    public EG012ControllerEmbeddedConsole(DSConfiguration config, Session session, User user) {
+        super(config, "eg012", "Embedded DocuSign web tool");
+        this.session = session;
+        this.user = user;
     }
 
     @Override
-    protected String getEgName() {
-        return "eg012";
-    }
-
-    @Override
-    protected String getTitle() {
-        return "Embedded DocuSign web tool";
-    }
-
-    @Override
-    protected String getResponseTitle() {
-        return null;
+    protected void onInitModel(WorkArguments args, ModelMap model) throws ApiException {
+        super.onInitModel(args, model);
+        model.addAttribute(MODEL_ENVELOPE_OK, StringUtils.isNotBlank(session.getEnvelopeId()));
     }
 
     @Override
     // ***DS.snippet.0.start
-    protected EnvelopeDocumentsResult doWork(WorkArguments args, ModelMap model,
-                                             String accessToken, String basePath) throws ApiException {
-        // Data for this method
-        // accessToken    (argument)
-        // basePath       (argument)
-        // config.appUrl  (url of the application itself)
+    protected Object doWork(WorkArguments args, ModelMap model, HttpServletResponse response) throws ApiException {
+        args.setDsReturnUrl(config.getDsReturnUrl());
 
-        ApiClient apiClient = new ApiClient(basePath);
-        apiClient.addDefaultHeader("Authorization", "Bearer " + accessToken);
-        EnvelopesApi envelopesApi = new EnvelopesApi(apiClient);
+        EnvelopesApi envelopesApi = createEnvelopesApi(session.getBasePath(), user.getAccessToken());
 
-        // Step 1. create the NDSE view
-        args.setDsReturnUrl(config.appUrl + "/ds-return");
-        ConsoleViewRequest viewRequest = makeConsoleViewRequest(args);
-
-        // Step 2. Call the CreateSenderView API
-        // Exceptions will be caught by the calling function
-        ViewUrl results = envelopesApi.createConsoleView(args.getAccountId(), viewRequest);
-        // process results
-        args.setRedirectUrl("redirect:" + results.getUrl());
-        System.out.println("NDSE view URL: " + results.getUrl());
-
-        return null;
-    }
-
-    private ConsoleViewRequest makeConsoleViewRequest(WorkArguments args) {
-        // Data for this method
-        String returnUrl = args.getDsReturnUrl();
-        String startingView = args.getStartingView();
-        String envelopeId = args.getEnvelopeId();
-
-
+        // Step 1. Create the Console / Web UI view.
+        // Set the URL where you want the recipient to go once they are finished in
+        // the Web UI. There are cases where a user will never click "FINISH" within
+        // the Web UI, you cannot assume control will be passed back to your application.
         ConsoleViewRequest viewRequest = new ConsoleViewRequest();
-        // Set the url where you want the recipient to go once they are done
-        // with the NDSE. It is usually the case that the
-        // user will never "finish" with the NDSE.
-        // Assume that control will not be passed back to your app.
-        viewRequest.setReturnUrl(returnUrl);
-
-        if ("envelope".equalsIgnoreCase(startingView) && envelopeId != null) {
+        viewRequest.setReturnUrl(config.getDsReturnUrl());
+        String envelopeId = session.getEnvelopeId();
+        if ("envelope".equalsIgnoreCase(args.getStartingView()) && envelopeId != null) {
             viewRequest.setEnvelopeId(envelopeId);
         }
 
-        return viewRequest;
+        // Step 2. Call the CreateSenderView API
+        ViewUrl viewUrl = envelopesApi.createConsoleView(session.getAccountId(), viewRequest);
+        return new RedirectView(viewUrl.getUrl());
     }
     // ***DS.snippet.0.end
 }

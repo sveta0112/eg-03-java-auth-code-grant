@@ -64,6 +64,30 @@ This repo is a Java Spring Boot application that demonstrates:
 1. **Requiring Knowledge-Based Authentication (KBA) for a Recipient**
    [Source.](./src/main/java/com/docusign/controller/examples/EG022ControllerKBAAuthentication.java)
    This example sends and envelope that requires passing a Public records check to validate identity for the purpose of multi-factor authentication.
+1. **Requiring ID Verification (IDV) for a recipient**  (Coming soon...)  
+1. **Creating a permission profile** (Coming soon...)
+1. **Setting a permission profile**
+   [Source.](./src/main/java/com/docusign/controller/examples/EG025ControllerPermissionSetUserGroups.java)
+   This code example demonstrates how to set a user group's permission profile using the [Update Group](https://developers.docusign.com/esign-rest-api/reference/UserGroups/Groups/update) method. 
+   You must have already created permissions profile and group of users.
+1. **Updating individual permission settings** (Coming Soon...)
+1. **Deleting a permission profile**
+   [Source.](./src/main/java/com/docusign/controller/examples/EG027ControllerPermissionDelete.java)
+   This code example demonstrates how to an account's permission profile using the [Delete AccountPermissionProfiles](https://developers.docusign.com/esign-rest-api/reference/Accounts/AccountPermissionProfiles/delete) method. 
+1. **Creating a brand**
+   [Source.](./src/main/java/com/docusign/controller/examples/EG028ControllerCreateBrand.java)
+   This example creates brand profile for an account using the [Create Brand](https://developers.docusign.com/esign-rest-api/reference/Accounts/AccountBrands/create) method.
+1. **Applying a brand to an envelope**
+   [Source.](./src/main/java/com/docusign/controller/examples/EG029ControllerApplyBrandToEnvelope.java)
+   This code example demonstrates how to apply a brand you've created to an envelope using the [Create Envelope](https://developers.docusign.com/esign-rest-api/reference/Envelopes/Envelopes/create) method. 
+   First, creates the envelope and then applies brand to it.
+   Anchor text ([AutoPlace](https://support.docusign.com/en/guides/AutoPlace-New-DocuSign-Experience)) is used to position the signing fields in the documents.
+1. **Applying a brand to a template**
+   [Source.](./src/main/java/com/docusign/controller/examples/EG030ControllerApplyBrandToTemplate.java)
+   This code example demonstrates how to apply a brand you've created to a template using using the [Create Envelope](https://developers.docusign.com/esign-rest-api/reference/Envelopes/Envelopes/create) method. 
+   You must have at least one created template and brand.
+   Anchor text ([AutoPlace](https://support.docusign.com/en/guides/AutoPlace-New-DocuSign-Experience)) is used to position the signing fields in the documents.
+1. **Bulk sending envelopes to multiple recipients** (Coming soon...)
 
 
 ## Installation
@@ -82,19 +106,30 @@ This repo is a Java Spring Boot application that demonstrates:
    use the appropriate DNS name and port instead of `localhost:8080`.
    An example Redirect URI: http://myserver.it.mycompany.com/login
 
-1. Java 8 or later.
+1. Java 11.
 1. A name and email for a signer, and a name and email for a cc recipient.
    The signer and the cc email cannot be the same.
+1. Maven
 
 ### Short installation instructions
 * Download or clone this repository.
 * The project includes a Maven pom file.
-* Configure the project by updating the file
-  `eg-03-java-auth-code-grant/src/main/resources/application.properties` file.
-* The project's main class is
- `com.docusign.App`
+* Create a file `eg-03-java-auth-code-grant/src/main/resources/application-dev.properties` and configure the project by overriding necessary properties from the `application.properties` file. **Don't add this file into the Git index.**
+* Add VM argument `-Dspring.profiles.active=dev` to your IDE
 * Note that IntelliJ Community Edition does not directly support
-  Spring Boot applications.
+  Spring Boot applications.  
+
+### Build and run
+Examples are built as a dedicated application with embedded TomCat server. Build:  
+``` bash
+$ cd eg-03-java-auth-code-grant
+$ mvn package
+```
+Run:  
+``` bash
+$ cd target
+$ java -Dspring.profiles.active=dev -jar eg-03-java-auth-code-grant-1.0-SNAPSHOT.war
+```
 
 ### IntelliJ Ultimate installation
 
@@ -103,7 +138,7 @@ See the [IntelliJ Ultimate instructions](https://github.com/docusign/eg-03-java-
 ## Configure the example
 
 Configure the example via the properties file:
-`eg-03-java-auth-code-grant/src/main/resources/application.properties`.
+`eg-03-java-auth-code-grant/src/main/resources/application-dev.properties`.
 
 Add the client id, secret, signer name and email to the file.
 Also add the URL that the application will use (the **DS_APP_URL** setting).
@@ -111,12 +146,7 @@ By default, this is http://localhost:8080
 
 You must also add a **Redirect URI** to the client id's settings in
 DocuSign. The Redirect URI is `/login` appended to the DS_APP_URL setting.
-Eg http://localhost:8080/login
-
-You should add `application.properties` to your .gitignore file so your
-private information will not be added to your repository.
-Do not store your client id (Integration Key), secret, or other
-private information in your code repository.
+Eg http://localhost:8080/login  
 
 ### Payments code example
 To use the payments example, create a

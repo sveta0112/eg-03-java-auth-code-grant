@@ -2,7 +2,7 @@
 <jsp:include page="../../partials/head.jsp"/>
 
 <h4>8. Create a template</h4>
-<p>Create a template with two roles, <b>signer</b> and <b>cc</b>.
+<p>Create a template with two roles, <strong>signer</strong> and <strong>cc</strong>.
     The template includes three documents.
 </p>
 
@@ -18,12 +18,12 @@
 
 
 <p>API methods used:
-    <a target='_blank' href="https://developers.docusign.com/esign-rest-api/reference/Templates/Templates/list">Templates::list</a>,
-    <a target='_blank' href="https://developers.docusign.com/esign-rest-api/reference/Templates/Templates/create">Templates::create</a>.
+    <a target='_blank' rel="noopener noreferrer" href="https://developers.docusign.com/esign-rest-api/reference/Templates/Templates/list">Templates::list</a>,
+    <a target='_blank' rel="noopener noreferrer" href="https://developers.docusign.com/esign-rest-api/reference/Templates/Templates/create">Templates::create</a>.
 </p>
 
 <p>
-    View source file <a target="_blank" href="${source}">EG008ControllerCreateTemplate.java</a> on GitHub.
+    View source file <a target="_blank" href="${sourceUrl}">${sourceFile}</a> on GitHub.
 </p>
 
 <form class="eg" action="" method="post" data-busy="form">

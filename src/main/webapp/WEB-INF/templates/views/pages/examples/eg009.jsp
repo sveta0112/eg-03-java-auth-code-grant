@@ -3,7 +3,7 @@
 
 <h4>9. Send an envelope using a template</h4>
 <p>The envelope is defined by the template.
-    The signer and cc recipient name and email are used to fill in the template's <i>roles</i>.</p>
+    The signer and cc recipient name and email are used to fill in the template's <em>roles</em>.</p>
 
 <p>This example demonstrates a common pattern for DocuSign integrations: envelopes will
     be sent programmatically, based on a template. If the template definition needs to be
@@ -17,17 +17,25 @@
 
 
 <p>API method used:
-    <a target='_blank' href="https://developers.docusign.com/esign-rest-api/reference/Envelopes/Envelopes/create">Envelopes::create</a>.
+    <a target='_blank' rel="noopener noreferrer" href="https://developers.docusign.com/esign-rest-api/reference/Envelopes/Envelopes/create">Envelopes::create</a>.
 </p>
 <p>
-    View source file <a target="_blank" href="${source}">EG009ControllerUseTemplate.java</a> on GitHub.
+    View source file <a target="_blank" href="${sourceUrl}">${sourceFile}</a> on GitHub.
 </p>
 
 <c:choose>
-    <c:when test="${templateOk}">
+    <c:when test="${not empty listTemplates}">
         <p>The template you created via example 8 will be used.</p>
 
         <form class="eg" action="" method="post" data-busy="form">
+            <div class="form-group">
+                <label for="templateId">Envelope template</label> <select
+                    id="templateId" name="templateId" class="form-control">
+                    <c:forEach items="${listTemplates}" var="template">
+                        <option value="${template.templateId}">${template.name}</option>
+                    </c:forEach>
+                </select>
+            </div>
             <div class="form-group">
                 <label for="signerEmail">Signer Email</label>
                 <input type="email" class="form-control" id="signerEmail" name="signerEmail"
@@ -44,7 +52,7 @@
             <div class="form-group">
                 <label for="ccEmail">CC Email</label>
                 <input type="email" class="form-control" id="ccEmail" name="ccEmail"
-                       aria-describedby="emailHelp" placeholder="pat@example.com" required
+                       aria-describedby="emailHelp" placeholder="pat@example.com" required>
                 <small id="emailHelp" class="form-text text-muted">The email and/or name for the cc recipient must be
                     different from the signer.
                 </small>

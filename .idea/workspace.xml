@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7e1df8c4-844e-4a6c-8a34-d030092dfc81" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/docusign/controller/examples/EG024ControllerCreateBrand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/docusign/controller/examples/EG025ControllerApplyBrandToEnvelope.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/docusign/controller/examples/EG026ControllerApplyBrandToTemplate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/docusign/controller/examples/EG029ControllerPermissionDelete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/docusign/controller/examples/EG030ControllerPermissionSetUserGroups.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/pages/examples/eg024.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/pages/examples/eg025.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/pages/examples/eg025.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/pages/examples/eg026.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/pages/examples/eg027.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/pages/examples/eg027.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/pages/examples/eg028.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/pages/examples/eg028.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/pages/examples/eg029.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/pages/examples/eg029.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/pages/examples/eg030.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/pages/examples/eg030.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/pages/examples/eg031.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/pages/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/pages/index.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1YxT7IXY8tU3WRNc3m9RwaaALD7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RunManager">
+    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="eg-03-java-auth-code-grant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.docusign.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.docusign.App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7e1df8c4-844e-4a6c-8a34-d030092dfc81" name="Default Changelist" comment="" />
+      <created>1583883076360</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583883076360</updated>
+      <workItem from="1583883078018" duration="2832000" />
+      <workItem from="1584032332203" duration="51000" />
+      <workItem from="1584032434205" duration="1070000" />
+      <workItem from="1584479408408" duration="153000" />
+      <workItem from="1584479660811" duration="2512000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1584482780581">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1584482780581" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1584482780580">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1584482780580" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1584482780580">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1584482780580" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1584482780580">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1584482780580" />
+    <state width="1237" height="163" key="GridCell.Tab.1.bottom" timestamp="1584482780581">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1584482780581" />
+    <state width="1237" height="163" key="GridCell.Tab.1.center" timestamp="1584482780581">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1584482780581" />
+    <state width="1237" height="163" key="GridCell.Tab.1.left" timestamp="1584482780581">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1584482780581" />
+    <state width="1237" height="163" key="GridCell.Tab.1.right" timestamp="1584482780581">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1584482780581" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1584479530003">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1584479530003" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/eg_03_java_auth_code_grant$App.ic" NAME="App Coverage Results" MODIFIED="1584031743340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.docusign.*</FILTER>
+    </SUITE>
+  </component>
+</project>

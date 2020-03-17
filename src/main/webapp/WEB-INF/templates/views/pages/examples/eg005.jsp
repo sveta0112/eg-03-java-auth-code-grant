@@ -10,11 +10,11 @@
 
 
 <p>API method used:
-    <a target='_blank'
+    <a target='_blank' rel="noopener noreferrer"
        href="https://developers.docusign.com/esign-rest-api/reference/Envelopes/EnvelopeRecipients/list">EnvelopeRecipients::list</a>.
 </p>
 <p>
-    View source file <a target="_blank" href="${source}">EG005ControllerEnvelopeRecipients.java</a> on GitHub.
+    View source file <a target="_blank" href="${sourceUrl}">${sourceFile}</a> on GitHub.
 </p>
 
 <c:choose>
