@@ -5,10 +5,10 @@
 <p>An envelope's documents can be downloaded one by one or as a complete set.</p>
 <p>Document download options:</p>
 <ul>
-    <li><b>Combined</b>: a PDF with the combined content of all documents and the
+    <li><strong>Combined</strong>: a PDF with the combined content of all documents and the
         certificate
     </li>
-    <li><b>Zip Archive</b>: a ZIP archive that contains all of the PDF documents,
+    <li><strong>Zip Archive</strong>: a ZIP archive that contains all of the PDF documents,
         the certificate, and any .WAV files used for voice authentication.
     </li>
     <li>The envelope's individual documents</li>
@@ -20,11 +20,11 @@
 
 
 <p>API method used:
-    <a target='_blank' href="https://developers.docusign.com/esign-rest-api/reference/Envelopes/EnvelopeDocuments/get">EnvelopeDocuments::get</a>.
+    <a target='_blank' rel="noopener noreferrer" href="https://developers.docusign.com/esign-rest-api/reference/Envelopes/EnvelopeDocuments/get">EnvelopeDocuments::get</a>.
 </p>
 
 <p>
-    View source file <a target="_blank" href="${source}">EG007ControllerEnvelopeGetDoc.java</a> on GitHub.
+    View source file <a target="_blank" href="${sourceUrl}">${sourceFile}</a> on GitHub.
 </p>
 
 <c:choose>

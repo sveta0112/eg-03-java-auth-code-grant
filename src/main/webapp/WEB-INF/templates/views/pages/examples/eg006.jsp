@@ -2,7 +2,7 @@
 <jsp:include page="../../partials/head.jsp"/>
 
 <h4>6. List an envelope's documents</h4>
-<p>List the envelope's documents. A <i>Certificate of Completion</i> document
+<p>List the envelope's documents. A <em>Certificate of Completion</em> document
     is also associated with every envelope.
 </p>
 
@@ -14,11 +14,11 @@
 
 
 <p>API method used:
-    <a target='_blank' href="https://developers.docusign.com/esign-rest-api/reference/Envelopes/EnvelopeDocuments/list">EnvelopeDocuments::list</a>.
+    <a target='_blank' rel="noopener noreferrer" href="https://developers.docusign.com/esign-rest-api/reference/Envelopes/EnvelopeDocuments/list">EnvelopeDocuments::list</a>.
 </p>
 
 <p>
-    View source file <a target="_blank" href="${source}">EG006ControllerEnvelopeDocs.java</a> on GitHub.
+    View source file <a target="_blank" href="${sourceUrl}">${sourceFile}</a> on GitHub.
 </p>
 
 <c:choose>
@@ -28,7 +28,7 @@
         <form class="eg" action="" method="post" data-busy="form">
             <input type="hidden" name="_csrf" value="${csrfToken}">
             <button type="submit" class="btn btn-primary">Continue</button>
-        </form
+        </form>
     </c:when>
     <c:otherwise>
         <p>Problem: please first create an envelope using <a href="eg002">example 2.</a> <br/>

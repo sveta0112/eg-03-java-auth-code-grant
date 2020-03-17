@@ -17,15 +17,15 @@
 
 
 <p>API method used:
-    <a target='_blank'
+    <a target='_blank' rel="noopener noreferrer"
        href="https://developers.docusign.com/esign-rest-api/reference/Envelopes/EnvelopeViews/createConsole">EnvelopeViews::createConsole</a>.
 </p>
 
 <p>
-    View source file <a target="_blank" href="${source}">EG012ControllerEmbeddedConsole.java</a> on GitHub.
+    View source file <a target="_blank" href="${sourceUrl}">${sourceFile}</a> on GitHub.
 </p>
 <c:if test="${not envelopeOk}">
-    <p><b>Optional:</b> to use the <i>Envelope's document view</i> please first create an envelope using
+    <p><strong>Optional:</strong> to use the <em>Envelope's document view</em> please first create an envelope using
         <a href="eg002">example 2.</a></p>
 </c:if>
 

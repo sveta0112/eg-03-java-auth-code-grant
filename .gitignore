@@ -1,9 +1,14 @@
 # idea
-.idea/
-*.iml
+#.idea/
+#*.iml
+
 
 # target dir
-target/
+.settings/*
+target/*
+.classpath
+.project
+
 
 # Compiled class file
 *.class
